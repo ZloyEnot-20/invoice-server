@@ -248,9 +248,9 @@ app.get('/getInv', async (req, res) => {
   res.json();
 });
 
-app.get('/test', async (req, res) => {
+app.get('/test', (req, res) => {
  
-  res.json('ga gaa');
+  res.send('ga gaa');
 });
 
 server.listen(process.env.PORT || 8000, (err) => {
