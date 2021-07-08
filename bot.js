@@ -21,7 +21,9 @@ async function getCmInfo(id) {
   log(chalk.blue('Server: ') + chalk.green('started'));
   // Informing that we started
 
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    args: ["--no-sandbox", "--disabled-setupid-sandbox"],
+  });
   const page = await browser.newPage();
   // await recorder.init(page, 'video');
   // Making navigation time equal to 0
