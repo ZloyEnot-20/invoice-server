@@ -244,14 +244,14 @@ app.get('/invoice', async (req, res) => {
 
 app.get('/getInv', async (req, res) => {
   const { name, surname, email, phone, price, car, id } = data;
-  res.send('work');
+  
   getInvoice(name, surname, email, phone, price, car, id);
- // res.send('work');
+  res.send('work');
 });
 
 app.get('/test', (req, res) => {
  
-  res.send('ga gaa');
+  res.send('123 gaa');
 });
 
 server.listen(process.env.PORT || 8000, (err) => {
