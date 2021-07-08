@@ -244,8 +244,9 @@ app.get('/invoice', async (req, res) => {
 
 app.get('/getInv', async (req, res) => {
   const { name, surname, email, phone, price, car, id } = data;
-  getInvoice(name, surname, email, phone, price, car, id);
   res.send('work');
+  getInvoice(name, surname, email, phone, price, car, id);
+ // res.send('work');
 });
 
 app.get('/test', (req, res) => {
