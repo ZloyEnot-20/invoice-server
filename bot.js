@@ -3,9 +3,7 @@ const PuppeteerVideoRecorder = require('puppeteer-video-recorder');
 const chalk = require('chalk');
 const log = console.log;
 const recorder = new PuppeteerVideoRecorder();
-const TARIF = {
-  price: '200',
-};
+
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
@@ -33,17 +31,17 @@ async function getCmInfo(id) {
   await page.goto('https://www.jtracker.com/', {
     waitUntil: 'networkidle2',
   });
-  await page.screenshot({ path: 'jtracker.png', fullPage: true });
+  //await page.screenshot({ path: 'jtracker.png', fullPage: true });
   await page.type('#username', 'Justin.uzbeks');
   await page.type('#password', 'Userudt34@');
   await page.click('[value="Login"]');
   log(chalk.blue('Stage: ') + chalk.green('2'));
 
   await page.waitForSelector('#primaryNav > ul > li:nth-child(4)');
-  await page.screenshot({ path: 'finish.png', fullPage: true });
+ // await page.screenshot({ path: 'finish.png', fullPage: true });
   await page.click('#primaryNav > ul > li:nth-child(4)');
   log(chalk.blue('Stage: ') + chalk.green('3'));
-  await page.screenshot({ path: 'order.png', fullPage: true });
+ // await page.screenshot({ path: 'order.png', fullPage: true });
   await page.waitForSelector('.fstyle');
   await page.evaluate('document.querySelector(".fstyle").value = 0');
   await page.waitForSelector('form:nth-child(1)');
@@ -56,7 +54,7 @@ async function getCmInfo(id) {
   await page.click('[value="Search"]');
   log(chalk.blue('Stage: ') + chalk.green('5'));
   await page.waitForSelector('.id > a');
-  await page.screenshot({ path: 'srch.png', fullPage: true });
+ // await page.screenshot({ path: 'srch.png', fullPage: true });
   await page.click('.id > a');
   await page.waitForSelector('.tab:nth-child(2)');
   await page.click('.tab:nth-child(2)');
