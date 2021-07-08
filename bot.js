@@ -22,8 +22,8 @@ async function getCmInfo(id) {
   // Informing that we started
 
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disabled-setupid-sandbox"],
-  });
+  ignoreDefaultArgs: ['--disable-extensions'],
+});
   const page = await browser.newPage();
   // await recorder.init(page, 'video');
   // Making navigation time equal to 0
