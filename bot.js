@@ -248,6 +248,11 @@ app.get('/getInv', async (req, res) => {
   res.json();
 });
 
+app.get('/test', async (req, res) => {
+ 
+  res.json('ga gaa');
+});
+
 server.listen(process.env.PORT || 8000, (err) => {
   if (err) {
     throw Error(err, 'ERRRA');
