@@ -251,7 +251,7 @@ app.get('/getInv', async (req, res) => {
 
 app.get('/test', (req, res) => {
  
-  res.send('123 gaa');
+  res.send('Everything is good! ');
 });
 
 server.listen(process.env.PORT || 8000, (err) => {
