@@ -108,7 +108,7 @@ function getInvoice(name, surname, email, phone, price, car, id) {
       });
 
       //Making a screenshot that we visit a page
-      await page.screenshot({ path: 'main.png', fullPage: true });
+  //    await page.screenshot({ path: 'main.png', fullPage: true });
       await recorder.start();
       //Starting authorization
       await page.type('[name="email"]', 'John@udtransportation.com');
@@ -148,7 +148,7 @@ function getInvoice(name, surname, email, phone, price, car, id) {
       delay(2000);
       //Going to the next page
       await page.click('#payment-details-page-continue-step-one-button');
-      await page.screenshot({ path: 'customer.png', fullPage: true });
+ //     await page.screenshot({ path: 'customer.png', fullPage: true });
       //Waiting till button is available
       await delay(1000);
 
@@ -189,7 +189,7 @@ function getInvoice(name, surname, email, phone, price, car, id) {
         '.invoice-actions-component__StyledBrandedInlineAction-sc-1gxs3ug-1'
       );
 
-      await page.screenshot({ path: 'send.png', fullPage: true });
+  //    await page.screenshot({ path: 'send.png', fullPage: true });
       //Tophone number
       await page.click('.ant-dropdown-menu-vertical > li:nth-child(2)');
       log(chalk.blue('Message: ') + chalk.green('Sent...'));
@@ -205,17 +205,17 @@ function getInvoice(name, surname, email, phone, price, car, id) {
       await page.click(
         '.invoice-actions-component__StyledBrandedInlineAction-sc-1gxs3ug-1'
       );
-      await page.screenshot({ path: 'phone.png', fullPage: true });
+ //     await page.screenshot({ path: 'phone.png', fullPage: true });
 
       //To  email address
       await page.click('.ant-dropdown-menu-vertical > li:nth-child(1)');
       delay(2000);
       log(Date.now() - startTIme);
-      await page.screenshot({ path: 'in.png', fullPage: true });
+  //    await page.screenshot({ path: 'in.png', fullPage: true });
 
       //Logging that almost finished
       log(chalk.blue('Email: ') + chalk.green('Sent...'));
-      await page.screenshot({ path: 'invoice.png', fullPage: true });
+ //     await page.screenshot({ path: 'invoice.png', fullPage: true });
       log(chalk.blue('Process: ') + chalk.green('Done...'));
       await recorder.stop();
       await browser.close();
